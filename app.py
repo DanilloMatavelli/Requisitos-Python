@@ -16,7 +16,7 @@ lista_mensagem = [
 def index():
     return render_template("index.html")
 
-# Quando clicar no action do formulario irá ser post pois enviara as informações
+# Quando clicar no botão irá direcionar para outra página e retornar as descrições
 @app.route("/abrir_pagina")
 def abrir_pagina():
     descricao = Descricao.recuperar_mensagens()
@@ -36,7 +36,7 @@ def post_mensagem():
     nivel = request.form.get("nivel")
     valor = request.form.get("valor")
     
-    # Cadastrando a mensagem usando a classe mensagem
+    # Cadastrando a descrição usando a classe Descricao
     Descricao.cadastrardescricao(descricao, nivel, valor )
     
     
